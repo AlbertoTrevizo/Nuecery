@@ -1,15 +1,39 @@
+@font-face {
+  font-family: Catchy Mager;
+  src: url(Catchy.ttf);
+}
+
+html {
+  font-family: Catchy Mager;
+}
+
 body {
-  background-color: #ffd9d9;
+  background-color: #f4d8d5;
+  display: flex;
+  justify-content: center;
 }
 
 header {
   display: flex;
   position: sticky;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: #b8554a;
+  top: 0px;
+  padding-top: 1.25rem /* 20px */;
+  padding-bottom: 1.25rem /* 20px */;
+  align-items: center;
+}
+
+nav {
+  justify-content: start;
+}
+
+h1 {
+  font-family: Catchy Mager;
 }
 
 .container {
-  background-color: #ffa2a2;
+  background-color: #ebbbb6;
   width: 60%;
   height: auto;
   padding: 2rem;
