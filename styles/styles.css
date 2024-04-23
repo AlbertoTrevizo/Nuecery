@@ -1,0 +1,17 @@
+body {
+  background-color: #ffd9d9;
+}
+
+header {
+  display: flex;
+  position: sticky;
+  justify-content: center;
+}
+
+.container {
+  background-color: #ffa2a2;
+  width: 60%;
+  height: auto;
+  padding: 2rem;
+  margin: auto;
+}
