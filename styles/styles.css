@@ -6,42 +6,42 @@
 html {
   font-family: Catchy Mager;
   padding: 0px;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #fcf5f4;
+  /* background-color: #fcf5f4; */
   margin: 0;
+  background-image: url('/images/background.jpg'); /* Replace 'wood-texture.jpg' with the path to your wood texture image */
+  background-repeat: repeat;
 }
 
 header {
   display: flex;
   position: sticky;
   top: 0px;
-  justify-content: space-evenly;
-  background-color: #f4d8d5;
-  padding-top: 1.25rem /* 20px */;
-  padding-bottom: 1.25rem /* 20px */;
+  justify-content: space-between;
   align-items: center;
-  height: 3rem;
-  /* border-bottom: 1px solid black; */
+  height: 8rem;
   box-shadow: 0 2px 4px rgba(244, 216, 213, 0.1);
   background: linear-gradient(to right, #f4d8d5, #803b34);
-  border-radius: 0 0 5px 5px;
 }
 
 header img {
-  width: 6rem;
-  height: 6rem;
+  width: 16rem;
+  height: 16rem;
+  padding-top: 4rem;
 }
 
 nav {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-around;
+  margin-right: 20rem;
 }
 
 nav a {
-  padding: 1em 1em;
+  padding-inline: 6em;
   color: var(--black);
   text-decoration: none;
 }
@@ -49,17 +49,17 @@ nav a {
 hr {
   width: 10%;
   height: 6px;
-  background-color: #6c3630;
+  background-color: #f4d8d5;
   border-radius: 10px;
   border: none;
 }
 
 .container {
-  background-color: #f4d8d5;
-  width: 60%;
+  /* background-color: white; */
+  width: 100%;
   height: auto;
   margin: auto;
-  color: #6c3630;
+  color: #f4d8d5;
 }
 
 img.big-img {
