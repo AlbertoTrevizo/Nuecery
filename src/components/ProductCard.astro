@@ -10,13 +10,19 @@ const { image, name } = Astro.props;
 <style>
   .product-card {
     text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
   }
   .product-card img {
     width: 100%;
-    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
   }
   p {
     margin-top: 0.5rem;
     font-weight: bold;
+    padding: 1rem;
   }
 </style>
