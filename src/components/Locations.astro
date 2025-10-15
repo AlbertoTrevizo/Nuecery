@@ -1,0 +1,53 @@
+--- 
+import LocationCard from './LocationCard.astro';
+
+const locations = [
+  {
+    name: 'Tienda La Esquina',
+    address: 'Calle Falsa 123, Colonia Centro, Ciudad de México.',
+    mapImage: '/images/map1.png' // Replace with actual map images
+  },
+  {
+    name: 'Mercado Fresco',
+    address: 'Avenida Siempre Viva 742, Jardines del Sol, Guadalajara.',
+    mapImage: '/images/map2.png'
+  },
+  {
+    name: 'Naturaleza Viva',
+    address: 'Blvd. Constitución 500, Centro, Monterrey.',
+    mapImage: '/images/map3.png'
+  }
+];
+---
+
+<section id="puntos-venta" class="locations-section">
+  <h2>Puntos de Venta</h2>
+  <div class="locations-grid">
+    {locations.map(location => (
+      <LocationCard 
+        name={location.name} 
+        address={location.address} 
+        mapImage={location.mapImage} 
+      />
+    ))}
+  </div>
+</section>
+
+<style>
+  .locations-section {
+    background-color: #F9F5F2;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .locations-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>
