@@ -2,16 +2,15 @@
 import ProductCard from './ProductCard.astro';
 
 const products = [
-  { name: 'Nueces en Caja', image: '/images/nuez.jpg' },
-  { name: 'Nueces a Granel', image: '/images/nuez2.jpg' },
-  { name: 'Mix de Nueces', image: '/images/nuez3.jpg' },
-  { name: 'Nueces Especiadas', image: '/images/nuez4.jpg' },
-  { name: 'Nueces Orgánicas', image: '/images/nuez5.jpg' },
-  { name: 'Nueces Glaseadas', image: '/images/nuez6.jpg' },
+  { name: 'Nuez Corazon Kg/500gr', image: '/images/nuez-corazon.jpg' },
+  { name: 'Nuez Pedaceria Kg/500gr', image: '/images/nuez-pedaceria.jpg' },
+  { name: 'Nuez Granillo Kg/500gr', image: '/images/nuez-granillo.jpg' },
+  { name: 'Nuez Granzon Kg/500gr', image: '/images/nuez-granzon.jpg' },
+  { name: 'Nuez Garapiñada Kg/500gr', image: '/images/nuez-garapinada.jpg' }
 ];
 ---
 
-<section id="presentations" class="presentations-section">
+<section id="presentaciones" class="presentations-section">
   <h2>Nuestras Presentaciones</h2>
   <div class="products-grid">
     {products.map(product => (
