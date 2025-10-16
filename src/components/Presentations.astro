@@ -1,12 +1,12 @@
---- 
+---
 import ProductCard from './ProductCard.astro';
 
 const products = [
-  { name: 'Nuez Corazon Kg/500gr', image: '/images/nuez-corazon.jpg' },
-  { name: 'Nuez Pedaceria Kg/500gr', image: '/images/nuez-pedaceria.jpg' },
-  { name: 'Nuez Granillo Kg/500gr', image: '/images/nuez-granillo.jpg' },
-  { name: 'Nuez Granzon Kg/500gr', image: '/images/nuez-granzon.jpg' },
-  { name: 'Nuez Garapiñada Kg/500gr', image: '/images/nuez-garapinada.jpg' }
+  { name: 'Nuez Corazon', image: '/images/nuez-corazon.jpg', presentaciones: ['1kg', '500gr'] },
+  { name: 'Nuez Pedaceria', image: '/images/nuez-pedaceria.jpg', presentaciones: ['1kg', '500gr'] },
+  { name: 'Nuez Granillo', image: '/images/nuez-granillo.jpg', presentaciones: ['1kg', '500gr'] },
+  { name: 'Nuez Granzon', image: '/images/nuez-granzon.jpg', presentaciones: ['1kg', '500gr'] },
+  { name: 'Nuez Garapiñada', image: '/images/nuez-garapinada.jpg', presentaciones: ['1kg', '500gr'] }
 ];
 ---
 
@@ -14,7 +14,7 @@ const products = [
   <h2>Nuestras Presentaciones</h2>
   <div class="products-grid">
     {products.map(product => (
-      <ProductCard name={product.name} image={product.image} />
+      <ProductCard name={product.name} image={product.image} presentaciones={product.presentaciones} />
     ))}
   </div>
 </section>
@@ -24,7 +24,6 @@ const products = [
     text-align: center;
     padding: 4rem 2rem;
     background-color: #F9F5F2;
-
   }
   .presentations-section h2 {
     font-size: 2rem;
