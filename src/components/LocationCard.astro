@@ -1,13 +1,15 @@
---- 
-const { name, address, mapImage } = Astro.props;
+---
+const { name, address, mapImage, mapLink } = Astro.props;
 ---
 
 <div class="location-card">
   <img src={mapImage} alt={`Map of ${name}`} />
   <div class="info">
-    <h3>{name}</h3>
-    <p>{address}</p>
-    <a href="#" class="button">Llamar</a>
+    <div>
+      <h3>{name}</h3>
+      <p>{address}</p>
+    </div>
+    <a href={mapLink} class="button" target="_blank">Cómo llegar?</a>
   </div>
 </div>
 
@@ -16,14 +18,23 @@ const { name, address, mapImage } = Astro.props;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
   }
   .location-card img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
   .info {
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .info h3 {
     margin-top: 0;
@@ -38,5 +49,6 @@ const { name, address, mapImage } = Astro.props;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 1rem;
   }
 </style>

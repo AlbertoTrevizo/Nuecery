@@ -5,32 +5,38 @@ const locations = [
   {
     name: 'El supercito',
     address: 'Calle Cuarta y Matamoros, Zona Centro.',
-    mapImage: '/images/el-supercito.png' 
+    mapImage: '/images/el-supercito.png',
+    mapLink: 'https://maps.app.goo.gl/9uCLu9ZaeHCrJ1zu9'
   },
   {
     name: "Tarantino's estación cafe",
     address: 'Calle 5 de Mayo #1460, Local 4, Frente a Polideportivo.',
-    mapImage: '/images/tarantinos.png'
+    mapImage: '/images/tarantinos.png',
+    mapLink: 'https://maps.app.goo.gl/g65Tb13nAYSagbAdA'
   },
   {
     name: 'Cocina de Faby',
     address: 'Calle Colombia Frente a transito.',
-    mapImage: '/images/cocina-faby.jpeg'
+    mapImage: '/images/cocina-faby.jpeg',
+    mapLink: 'https://maps.app.goo.gl/guKx2qQw4Nj7gC4D9'
   },
   {
     name: 'Cocina de Faby Corredor Comercial',
     address: 'Kilometro 14, Plaza Ontario.',
-    mapImage: '/images/cocina-faby.jpeg'
+    mapImage: '/images/cocina-faby.jpeg',
+    mapLink: 'https://maps.app.goo.gl/eM6oduhoXbE7XYB77'
   },
   {
-    name: 'Qusito Lindo',
+    name: 'Quesito Lindo',
     address: 'Avenida Allende y 11.',
-    mapImage: '/images/quesito-lindo.jpeg'
+    mapImage: '/images/quesito-lindo.jpeg',
+    mapLink: 'https://maps.app.goo.gl/3GXKw5gYhPmFAQAr9'
   },
   {
     name: 'Fruteria Hermanos Castillo',
     address: 'Kilometro 5, Corredor Comercial',
-    mapImage: '/images/fruteria-castillo.jpeg'
+    mapImage: '/images/fruteria-castillo.jpeg',
+    mapLink: 'https://maps.app.goo.gl/Ejk4CNg1f5u2ygFx9'
   }
 ];
 ---
@@ -43,6 +49,7 @@ const locations = [
         name={location.name} 
         address={location.address} 
         mapImage={location.mapImage} 
+        mapLink={location.mapLink}
       />
     ))}
   </div>
@@ -64,5 +71,6 @@ const locations = [
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
   }
 </style>
