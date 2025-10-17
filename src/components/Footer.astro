@@ -1,14 +1,6 @@
 ---
 ---
 <footer class="footer">
-  <div class="footer-links">
-    <a href="#">Política de Privacidad</a>
-    <a href="#">Términos y Condiciones</a>
-  </div>
-  <div class="footer-social">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-  </div>
   <div class="footer-copy">
     <p>&copy; 2025 Nuecery. Todos los derechos reservados.</p>
   </div>
@@ -16,46 +8,17 @@
 
 <style>
   .footer {
-    background-color: #F9F5F2;
+    background-color: #f4d8d5;
     padding: 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem;
     color: #555;
-  }
-
-  .footer-links a {
-    color: #555;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-
-  .footer-social a {
-    color: #555;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.5rem;
   }
 
   .footer-copy p {
     margin: 0;
     font-size: 0.9rem;
   }
-
-  @media (min-width: 768px) {
-    .footer {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
 </style>
-
-<script>
-  // FontAwesome for social media icons
-  const script = document.createElement('script');
-  script.src = 'https://kit.fontawesome.com/a076d05399.js';
-  script.crossOrigin = 'anonymous';
-  document.head.appendChild(script);
-</script>
