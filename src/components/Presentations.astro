@@ -1,39 +1,37 @@
 ---
 import ProductCard from './ProductCard.astro';
+import corazon from '../assets/images/nuez-corazon.jpg';
+import pedaceria from '../assets/images/nuez-pedaceria.jpg';
+import granillo from '../assets/images/nuez-granillo.jpg';
+import granzon from '../assets/images/nuez-granzon.jpg';
+import garapinada from '../assets/images/nuez-garapinada.jpg';
 
 const products = [
-  { name: 'Nuez Corazon', image: '/images/nuez-corazon.jpg', presentaciones: ['1kg', '500gr'] },
-  { name: 'Nuez Pedaceria', image: '/images/nuez-pedaceria.jpg', presentaciones: ['1kg', '500gr'] },
-  { name: 'Nuez Granillo', image: '/images/nuez-granillo.jpg', presentaciones: ['1kg', '500gr'] },
-  { name: 'Nuez Granzon', image: '/images/nuez-granzon.jpg', presentaciones: ['1kg', '500gr'] },
-  { name: 'Nuez Garapiñada', image: '/images/nuez-garapinada.jpg', presentaciones: ['1kg', '500gr'] }
+  { name: 'Nuez Corazón', image: corazon, description: 'Mitades enteras, para botanear o decorar postres.' },
+  { name: 'Nuez Pedacería', image: pedaceria, description: 'Trozos grandes para pays, ensaladas y galletas.' },
+  { name: 'Nuez Granillo', image: granillo, description: 'Picada mediana, lista para pasteles y panes.' },
+  { name: 'Nuez Granzón', image: granzon, description: 'Picada fina para rellenos, empanizados y masas.' },
+  { name: 'Nuez Garapiñada', image: garapinada, description: 'Cubierta de caramelo crujiente, lista para comer.' }
 ];
 ---
 
-<section id="presentaciones" class="presentations-section">
-  <h2>Nuestras Presentaciones</h2>
-  <div class="products-grid">
-    {products.map(product => (
-      <ProductCard name={product.name} image={product.image} presentaciones={product.presentaciones} />
-    ))}
+<section id="presentaciones" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Nuestras presentaciones</h2>
+      <p>Cinco cortes de nuez pecana, cada uno en bolsa de 1 kg o 500 gr.</p>
+    </div>
+    <div class="products">
+      {products.map(product => <ProductCard {...product} presentaciones={['1 kg', '500 gr']} />)}
+    </div>
   </div>
 </section>
 
 <style>
-  .presentations-section {
-    text-align: center;
-    padding: 4rem 2rem;
-    background-color: #F9F5F2;
-  }
-  .presentations-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
   }
 </style>

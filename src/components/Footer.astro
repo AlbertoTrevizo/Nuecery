@@ -1,24 +1,40 @@
 ---
+import { WHATSAPP, INSTAGRAM } from '../consts';
 ---
 <footer class="footer">
-  <div class="footer-copy">
-    <p>&copy; 2025 Nuecery. Todos los derechos reservados.</p>
+  <div class="container footer-inner">
+    <img src="/images/nuecery-logo.png" alt="Nuecery" width="48" height="48" />
+    <p>&copy; {new Date().getFullYear()} Nuecery Cuauhtémoc. Todos los derechos reservados.</p>
+    <div class="social">
+      <a href={INSTAGRAM} target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href={WHATSAPP} target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+    </div>
   </div>
 </footer>
 
 <style>
-  .footer {
-    background-color: #f4d8d5;
-    padding: 2rem;
+  .footer { padding-block: 1.75rem; }
+
+  .footer-inner {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    text-align: center;
-    color: #555;
+    gap: 1rem 1.25rem;
   }
 
-  .footer-copy p {
-    margin: 0;
+  img { border-radius: 50%; }
+
+  p {
     font-size: 0.9rem;
+    color: var(--ciruela-suave);
   }
+
+  .social {
+    display: flex;
+    gap: 1.25rem;
+    margin-left: auto;
+    font-size: 1.5rem;
+  }
+
+  .social a:hover { color: var(--terracota-oscuro); }
 </style>

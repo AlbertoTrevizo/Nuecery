@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+import tartas from '../assets/images/nuez5.jpg';
+import garapinada from '../assets/images/nuez6.jpg';
+import cupcake from '../assets/images/nuez7.jpg';
+
+const ideas = [
+  { image: tartas, caption: 'Tartaletas de nuez' },
+  { image: garapinada, caption: 'Garapiñada con miel y canela' },
+  { image: cupcake, caption: 'Cupcakes con nuez' }
+];
+---
+
+<section id="cocina" class="section kitchen">
+  <div class="container kitchen-inner">
+    <div class="kitchen-text">
+      <h2>Para tu cocina y tu mesa</h2>
+      <p>
+        Nuestra nuez va bien en pays, pasteles, ensaladas o sola como botana.
+        Aquí van algunas ideas para usarla.
+      </p>
+      <a href="#presentaciones" class="btn btn-outline">Elegir presentación</a>
+    </div>
+    <ul class="gallery">
+      {ideas.map(idea => (
+        <li>
+          <figure>
+            <Image src={idea.image} alt={idea.caption} width={640} widths={[320, 640]} sizes="(max-width: 760px) 45vw, 240px" />
+            <figcaption>{idea.caption}</figcaption>
+          </figure>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .kitchen { background: var(--crema); }
+
+  .kitchen-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .kitchen-text p {
+    max-width: 26rem;
+    margin: 1.25rem 0 2rem;
+    color: var(--ciruela-suave);
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* la foto del centro baja un poco para romper la cuadrícula */
+  .gallery li:nth-child(2) { margin-top: 3rem; }
+
+  figure { margin: 0; }
+
+  figure img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 999px 999px 20px 20px;
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-family: var(--display);
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 760px) {
+    .kitchen-inner { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .gallery li:nth-child(2) { margin-top: 2rem; }
+    .gallery li:nth-child(3) { display: none; }
+  }
+</style>

@@ -1,76 +1,69 @@
---- 
+---
 import LocationCard from './LocationCard.astro';
+import elSupercito from '../assets/images/el-supercito.png';
+import tarantinos from '../assets/images/tarantinos.png';
+import cocinaFaby from '../assets/images/cocina-faby.jpeg';
+import quesitoLindo from '../assets/images/quesito-lindo.jpeg';
+import fruteriaCastillo from '../assets/images/fruteria-castillo.jpeg';
 
 const locations = [
   {
     name: 'El supercito',
     address: 'Calle Cuarta y Matamoros, Zona Centro.',
-    mapImage: '/images/el-supercito.png',
+    mapImage: elSupercito,
     mapLink: 'https://maps.app.goo.gl/9uCLu9ZaeHCrJ1zu9'
   },
   {
     name: "Tarantino's estación cafe",
     address: 'Calle 5 de Mayo #1460, Local 4, Frente a Polideportivo.',
-    mapImage: '/images/tarantinos.png',
+    mapImage: tarantinos,
     mapLink: 'https://maps.app.goo.gl/g65Tb13nAYSagbAdA'
   },
   {
     name: 'Cocina de Faby',
     address: 'Calle Colombia Frente a transito.',
-    mapImage: '/images/cocina-faby.jpeg',
+    mapImage: cocinaFaby,
     mapLink: 'https://maps.app.goo.gl/guKx2qQw4Nj7gC4D9'
   },
   {
     name: 'Cocina de Faby Corredor Comercial',
     address: 'Kilometro 14, Plaza Ontario.',
-    mapImage: '/images/cocina-faby.jpeg',
+    mapImage: cocinaFaby,
     mapLink: 'https://maps.app.goo.gl/eM6oduhoXbE7XYB77'
   },
   {
     name: 'Quesito Lindo',
     address: 'Avenida Allende y 11.',
-    mapImage: '/images/quesito-lindo.jpeg',
+    mapImage: quesitoLindo,
     mapLink: 'https://maps.app.goo.gl/3GXKw5gYhPmFAQAr9'
   },
   {
     name: 'Fruteria Hermanos Castillo',
     address: 'Kilometro 5, Corredor Comercial',
-    mapImage: '/images/fruteria-castillo.jpeg',
+    mapImage: fruteriaCastillo,
     mapLink: 'https://maps.app.goo.gl/Ejk4CNg1f5u2ygFx9'
   }
 ];
 ---
 
-<section id="puntos-venta" class="locations-section">
-  <h2>Puntos de Venta</h2>
-  <div class="locations-grid">
-    {locations.map(location => (
-      <LocationCard 
-        name={location.name} 
-        address={location.address} 
-        mapImage={location.mapImage} 
-        mapLink={location.mapLink}
-      />
-    ))}
+<section id="puntos-venta" class="section locations">
+  <div class="container">
+    <div class="section-head">
+      <h2>Puntos de venta</h2>
+      <p>Encuentra Nuecery en estos negocios de Cuauhtémoc.</p>
+    </div>
+    <div class="locations-grid">
+      {locations.map(location => <LocationCard {...location} />)}
+    </div>
   </div>
 </section>
 
 <style>
-  .locations-section {
-    background-color: #f4d8d5;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  .locations-section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
+  .locations { background: var(--rosa); }
+
   .locations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.5rem;
   }
 </style>

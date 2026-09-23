@@ -1,71 +1,76 @@
 ---
-const { name, image, presentaciones } = Astro.props;
-const needsZoom = name.includes('Granillo') || name.includes('Granzon');
-const needsAdjust = name.includes('Pedaceria') || name.includes('Garapiñada');
+import { Image } from 'astro:assets';
+import { WHATSAPP } from '../consts';
+
+const { name, image, description, presentaciones } = Astro.props;
+const orderLink = `${WHATSAPP}?text=${encodeURIComponent(`Hola, me interesa la ${name}.`)}`;
 ---
 
-<div class="product-card">
-  <div class="image-container">
-    <img src={image} alt={name} class:list={["product-image", { zoom: needsZoom, adjust: needsAdjust }]} />
-  </div>
+<article class="product-card">
+  <Image src={image} alt={`Bolsas de ${name} de Nuecery`} width={720} widths={[360, 720]} sizes="340px" class="product-image" />
   <div class="product-details">
     <h3>{name}</h3>
-    <div class="presentaciones">
-      {presentaciones.map(p => <span class="presentacion">{p}</span>)}
-    </div>
+    <p>{description}</p>
+    <ul class="sizes" aria-label="Presentaciones">
+      {presentaciones.map(p => <li>{p}</li>)}
+    </ul>
+    <a href={orderLink} class="btn btn-outline" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Pedir
+    </a>
   </div>
-</div>
+</article>
 
 <style>
   .product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    overflow: hidden; /* Ensure zoomed image doesn't overflow card */
-  }
-
-  .image-container {
-    width: 100%;
-    height: 180px; /* Increased height by 1.2 */
+    flex: 1 1 280px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    background: var(--crema);
+    border-radius: 24px;
     overflow: hidden;
-    background: #fff;
   }
 
   .product-image {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1;
     object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .product-image.zoom {
-    transform: scale(1.2);
-  }
-
-  .product-image.adjust {
-    object-position: middle;
   }
 
   .product-details {
-    padding: 0 1rem 1rem;
-  }
-
-  .product-card h3 {
-    margin: 1rem 0 0.5rem;
-  }
-
-  .presentaciones {
+    flex-grow: 1;
     display: flex;
-    justify-content: center;
-    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1.5rem;
   }
 
-  .presentacion {
-    background-color: #eee;
-    color: #333;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
+  h3 { font-size: 1.6rem; }
+
+  p {
+    color: var(--ciruela-suave);
+    font-size: 0.975rem;
+  }
+
+  .sizes {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sizes li {
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    background: var(--rosa);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .btn {
+    margin-top: auto;
+    width: 100%;
   }
 </style>

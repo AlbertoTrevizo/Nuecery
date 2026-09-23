@@ -1,32 +1,74 @@
+---
+import { WHATSAPP } from '../consts';
+---
 <header class="header">
-  <img src="/images/nuecery-logo.png" alt="Nuecery Logo" class="logo" />
-  <nav class="nav">
-    <a href="/">Inicio</a>
-    <a href="/#presentaciones">Nuestras Presentaciones</a>
-    <a href="/#puntos-venta">Puntos de Venta</a>
-    <a href="/#contacto">Contacto</a>
-  </nav>
+  <div class="container header-inner">
+    <a href="/" class="brand">
+      <img src="/images/nuecery-logo.png" alt="Nuecery, inicio" width="56" height="56" />
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#presentaciones">Productos</a>
+      <a href="#cocina">En la cocina</a>
+      <a href="#puntos-venta">Puntos de venta</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href={WHATSAPP} class="btn header-cta" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Pedir
+    </a>
+  </div>
 </header>
 
 <style>
   .header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    background-color: #f4d8d5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--beige);
+    border-bottom: 1px solid rgba(77, 58, 64, 0.12);
   }
 
-  .logo {
-    position: absolute;
-    left: 2rem;
-    height: 4rem;
+  .header-inner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 0.75rem;
+  }
+
+  .brand img { border-radius: 50%; }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
   }
 
   .nav a {
-    margin: 0 1rem;
+    font-weight: 600;
     text-decoration: none;
-    color: #000;
+    padding-block: 0.25rem;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav a:hover { border-color: var(--caramelo); }
+
+  .header-cta { padding: 0.55rem 1.2rem; }
+
+  @media (max-width: 760px) {
+    .header-inner {
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      padding-block: 0.5rem;
+    }
+    .brand img { width: 44px; height: 44px; }
+    .header-cta { margin-left: auto; }
+    .nav {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+      gap: 0.9rem;
+      overflow-x: auto;
+      font-size: 0.875rem;
+      white-space: nowrap;
+    }
   }
 </style>
